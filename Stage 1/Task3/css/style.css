@@ -1,0 +1,94 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+.container {
+	position: absolute;
+	margin: 20px;
+	width: auto;
+	background-color: #eee;
+}
+
+.container,
+.team-info,
+.team-logo,
+.introduce,
+.team-member,
+.personal-logo {
+	border: solid #999 1px;
+	box-sizing: border-box;
+}
+
+.team-logo,
+.personal-logo {
+	width: 80px;
+	height: 80px;
+	margin: 20px auto;
+}
+
+.team-info,
+.introduce,
+.team-member {
+	background-color: #fff;
+}
+
+/*团队信息*/
+.team-info {
+	float: left;
+	width: 200px;
+	height: 120px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.team-logo {
+	float: left;
+	margin: 20px;
+	background: url("../image/team.jpg") no-repeat;
+	background-size: cover;
+}
+
+.team-name {
+	float: right;
+	width: 56px;
+	height: 76px;
+	margin: 20px 20px 20px 0px;
+	line-height: 1.5em;
+	font-weight: bolder;
+}
+/*团队信息结束*/
+
+/*团队成员信息*/
+.team-member {
+	float: right;
+	width: 120px;
+	height: 320px;
+	margin: 20px;
+}
+
+.person1 {
+	background: url("../image/songzhj.jpg") no-repeat;
+	background-size: cover;
+}
+
+.person2 {
+	background: url("../image/xyy.jpg") no-repeat;
+	background-size: cover;
+}
+
+.person3 {
+	background: url("../image/chf.jpg") no-repeat;
+	background-size: cover;
+}
+/*团队成员信息结束*/
+
+/*团队介绍*/
+.introduce {
+	width: auto;
+	height: auto;
+	margin: 20px 160px 60px 240px;
+	padding: 0 20px;
+}
+/*团队介绍结束*/
