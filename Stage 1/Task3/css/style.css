@@ -1,31 +1,27 @@
-html, body {
-	margin: 0px;
-	padding: 0px;
-	width: 100%;
+.container {
+	margin: 20px;
+	padding: 20px;
+	min-width: 650px;
+	background-color: #eee;
 }
 
-.container {
-	position: absolute;
-	margin: 20px;
-	width: auto;
-	background-color: #eee;
+.container:after {
+	clear: both;
+	content: "";
+	display: block;
 }
 
 .container,
 .team-info,
-.team-logo,
 .introduce,
-.team-member,
-.personal-logo {
+.team-member {
 	border: solid #999 1px;
 	box-sizing: border-box;
 }
 
-.team-logo,
-.personal-logo {
+.team-info img,
+.team-member img {
 	width: 80px;
-	height: 80px;
-	margin: 20px auto;
 }
 
 .team-info,
@@ -36,25 +32,17 @@ html, body {
 
 /*团队信息*/
 .team-info {
-	float: left;
+	position: relative;
 	width: 200px;
-	height: 120px;
-	margin-top: 20px;
-	margin-left: 20px;
-}
-
-.team-logo {
+	padding: 20px;
 	float: left;
-	margin: 20px;
-	background: url("../image/team.jpg") no-repeat;
-	background-size: cover;
 }
 
 .team-name {
-	float: right;
-	width: 56px;
-	height: 76px;
-	margin: 20px 20px 20px 0px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 50px;
 	line-height: 1.5em;
 	font-weight: bolder;
 }
@@ -64,31 +52,17 @@ html, body {
 .team-member {
 	float: right;
 	width: 120px;
-	height: 320px;
-	margin: 20px;
+	padding: 10px;
 }
 
-.person1 {
-	background: url("../image/songzhj.jpg") no-repeat;
-	background-size: cover;
-}
-
-.person2 {
-	background: url("../image/xyy.jpg") no-repeat;
-	background-size: cover;
-}
-
-.person3 {
-	background: url("../image/chf.jpg") no-repeat;
-	background-size: cover;
+.team-member img {
+	margin: 10px 10px 10px 10px;
 }
 /*团队成员信息结束*/
 
 /*团队介绍*/
 .introduce {
-	width: auto;
-	height: auto;
-	margin: 20px 160px 60px 240px;
+	margin: 0 160px 0 240px;
 	padding: 0 20px;
 }
 /*团队介绍结束*/
