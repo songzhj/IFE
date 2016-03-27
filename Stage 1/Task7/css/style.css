@@ -1,0 +1,90 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 1280px;
+}
+
+div, span {
+	box-sizing: border-box;
+	font-family: "Microsoft YaHei", sans-serif;
+}
+
+div.fill {
+	flex: 1 1 0;
+}
+
+#top-bar {
+	position: fixed;
+	z-index: 5;
+	top: 0;
+	font-family: "Microsoft YaHei";
+	height: 52px;
+	min-width: 850px;
+	width: 100%;
+	display: flex;
+	background: white scroll;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#top-bar + section {
+	margin-top: 52px;
+}
+
+#top-bar .logo {
+	width: 32px;
+	height: 32px;
+	margin-left: 60px;
+	margin-top: 10px;
+}
+
+#top-bar .title {
+	line-height: 52px;
+	font-size: 20px;
+	margin-left:  10px;
+}
+
+#top-bar > ul {
+	box-sizing: border-box;
+	height: 52px;
+	margin: 0;
+	padding: 0;
+}
+
+#top-bar .tab {
+	font-style: 14px;
+	font-weight: bolder;
+	color: #999;
+	display: inline-block;
+	line-height: 52px;
+	padding: 0 20px;
+	cursor: pointer;
+	box-sizing: content-box;
+	border-bottom: 0 solid red ;
+	transition: all 0.3s ease 0s;
+}
+
+#top-bar .selected,
+#top-bar .tab:hover {
+	border-bottom: 4px solid red;
+	line-height: 44px;
+	color: red;
+}
+
+#top-bar .login {
+	position: relative;
+	color: red;
+	line-height: 49px;
+	display: inline-block;
+	margin-right: 30px;
+	padding: 0 20px;
+	text-decoration: none;
+}
+
+#top-bar .login img {
+	position: relative;
+	top: 3px;
+	padding-right: 5px;
+}
