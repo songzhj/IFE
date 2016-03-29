@@ -480,3 +480,161 @@ div.fill {
     width: 12px;
 }
 
+#part-7 {
+	display: flex;
+	height: 600px;
+}
+
+#part-7 > div {
+	display: flex;
+	flex: 1 1 0;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#part-7 .left {
+	background: #f55;
+	color: white;
+}
+
+#part-7 div > .description {
+	position: relative;
+	font-size: 20px;
+	text-align: center;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+
+#part-7 div > .description:after {
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	margin-left: -40px;
+	content: "";
+	border-bottom: 2px solid white;
+	width: 80px;
+}
+
+#part-7 div > .button {
+	border: 1px solid white;
+	width: 120px;
+	line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	transition: all 0.3s ease 0s;
+}
+
+#part-7 .left .button:hover {
+	background: white;
+	color: #f55;
+}
+
+#part-7 .mid .description:after {
+	border-color: #000;
+}
+
+#part-7 .mid .button {
+	border-color: #f55;
+	color: #f55;
+}
+
+#part-7 .right {
+	position: relative;
+}
+
+#part-7 .right:before {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	content: "";
+	background: url("../image/img03.jpg") no-repeat right center / cover;
+	filter: brightness(0.65);
+}
+
+#part-7 .right:after {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -10px;
+	content: "";
+	border-color: transparent transparent transparent #fff;
+	border-width: 20px 0 20px 20px;
+	border-style: solid;
+}
+
+#part-8 .head {
+	height: 400px;
+}
+
+#part-8 .head .title{
+	position: relative;
+	font-size: 24px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+#part-8 .head .title:after {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -15px;
+	width: 30px;
+	content: "";
+	border-bottom: 2px solid #000;
+}
+
+#part-8 .head .description {
+	width: 600px;
+	color: #bbb;
+	text-align: center;
+}
+
+#part-8 .form {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 0 10% 200px;
+}
+
+#part-8 .form .left {
+	flex: 1 1 0;
+}
+
+#part-8 .form .left > div:after {
+	background: url("../image/more.png") no-repeat left center;
+	content: "more";
+	display: block;
+	font-family: serif;
+	font-size: 12px;
+	margin-left: auto;
+	padding-left: 15px;
+	position: absolute;
+	right: 0;
+	width: auto;
+}
+
+#part-8 .form .left > div {
+	padding-bottom: 20px;
+	position: relative;
+}
+
+#part-8 .form .left div .title {
+	display: block;
+	font-size: 20px;
+	line-height: 50px;
+}
+
+#part-8 .form .left div .description {
+	display: block;
+	color: #bbb;
+	overflow: hidden;
+}
+
+#part-8 .form .right {
+	flex: 2 1 0;
+	margin-left: 50px;
+}
