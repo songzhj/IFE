@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-	min-width: 1280px;
+	min-width: 960px;
 }
 
 div, span, p {
@@ -637,4 +637,137 @@ div.fill {
 #part-8 .form .right {
 	flex: 2 1 0;
 	margin-left: 50px;
+}
+
+#part-8 .form .right > div[label]:before {
+    position: absolute;
+    color: #000;
+    content: attr(label);
+    font-size: 13px;
+    line-height: 36px;
+    text-indent: 14px;
+}
+
+#part-8 .form .right > div[label] {
+    position: relative;
+    background: #eee;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 5px;
+    width: calc(50% - 20px);
+}
+
+#part-8 .form .right input {
+	background: transparent;
+	border: none;
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	text-indent: 70px;
+}
+
+#part-8 .form .right .textarea[label] { /*这个地方的选择器没用[label]的话,优先级没有上面的#part-8 .form .right > div[label]高,width属性会按上面的算!!*/
+	width: calc(100% - 25px);
+}
+
+#part-8 .form .right textarea {
+	background: transparent;
+	border: none;
+	width: 100%;
+	height: 140px;
+	margin: 0;
+	padding: 10px;
+	text-indent: 160px;
+	line-height: 15px;
+	resize: none;
+}
+
+
+#part-8 .form .right .submit {
+    	background: #eee;
+    	border: none;
+    	cursor: pointer;
+    	line-height: 20px;
+    	margin: 5px;
+    	text-indent: -5px;
+    	width: calc(100% - 25px);
+}
+
+
+#bottom-bar {
+   	background: #334;
+   	color: white;
+   	height: 500px;
+   	width: 100%;
+}
+
+#bottom-bar .description .title{
+	font-size: 30px;
+	margin: 10px;
+}
+
+#bottom-bar .description .description {
+	width: 400px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#bottom-bar .description .subdescription {
+	align-items: stretch;
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	margin-top: 40px;
+	width: 120%;
+}
+
+#bottom-bar .description .subdescription input {
+	border: none;
+	flex: 1 1 0;
+	font-size: 20px;
+	padding: 0 10px;
+}
+
+#bottom-bar .description .subdescription button {
+	background: #888;
+	border: medium none;
+	color: white;
+	font-size: 20px;
+	letter-spacing: 20px;
+	padding: 0 10px;
+	text-indent: 20px;
+}
+
+#bottom-bar .description .social {
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+
+#bottom-bar .description .social a{
+	text-decoration: none;
+	margin: 20px;
+}
+
+#bottom-bar .end {
+	position: relative;
+	background: #223;
+	height: 90px;
+	padding: 0 40px;
+	width: 100%;
+}
+
+#bottom-bar .end .copyright {
+	position: absolute;
+	top: 50%;
+	left: 4%;
+	margin-top: -6px;
+}
+
+#bottom-bar .end a {
+	position: absolute;
+	text-decoration: none;
+	color: white;
+	top: 50%;
+	right: 4%;
+	margin-top: -6px;
 }
