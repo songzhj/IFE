@@ -42,6 +42,9 @@ var aqiSourceData = {
   "沈阳": randomBuildData(500)
 };
 
+//柱形图的颜色
+var colors = {'#4C4FCE', '#1BD56E', '#D8FF00', '#413232', '#F90000', '#BCBEC2'};
+
 // 用于渲染图表的数据
 var chartData = {};
 
@@ -74,7 +77,7 @@ function graTimeChange() {
  */
 function citySelectChange() {
   // 确定是否选项发生了变化 
-
+  alert(this.value);
   // 设置对应数据
 
   // 调用图表渲染函数
@@ -92,17 +95,30 @@ function initGraTimeForm() {
  */
 function initCitySelector() {
   // 读取aqiSourceData中的城市，然后设置id为city-select的下拉列表中的选项
-
+  var citySelect = document.getElementById('city-select');
+  for (var city in aqiSourceData) {
+    var newCity = document.createElement('option');
+    newCity.innerHTML = city;
+    citySelect.appendChild(newCity);
+  }
   // 给select设置事件，当选项发生变化时调用函数citySelectChange
-
+  citySelect.addEventListener('change', citySelectChange);
 }
 
 /**
  * 初始化图表需要的数据格式
  */
 function initAqiChartData() {
-  // 将原始的源数据处理成图表需要的数据格式
-  // 处理好的数据存到 chartData 中
+  var week = 0, weekCount = 0, singleWeek = {},
+        month = 0, monthCount = 0, singleMonth = {};
+
+  for (var key in aqiSourceData) {
+    var tempValue = aqiSourceData[key]; //城市污染数据
+    var dayArr = Object.getOwnPropertyNames(tempValue); //日期
+    var tempMonth = dayArr[0].slice(5, 7); //当前日期的月份
+
+    
+  }
 }
 
 /**
