@@ -3,6 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Task17</title>
+    <style type="text/css">
+      #aqi-chart-wrap h2 {
+        position: absolute;
+        width: 350px;
+        left: 50%;
+        top: 10px;
+        margin-left: -175px;
+      }
+      @keyframes heightAnim {
+          0% {
+              bottom: -200px;
+          }
+          100% {
+              bottom: 0;
+          }
+      }
+      .aqi-bar {
+        position: absolute;
+        bottom: 0px;
+        animation: heightAnim .5s ease-in-out;
+      }
+      #aqi-chart-wrap {
+        height: 600px;
+        overflow: auto;
+      }
+      .aqi-hint {
+        position: absolute;
+        background-color: #fff;
+        font-size: 12px;
+        text-align: center;
+        width: 100px;
+        display: none;
+        z-index: 5;
+        border: 1px solid black;
+        border-radius: 8px;
+      }
+      .show + div {
+          display: block;
+      }
+    </style>
   </head>
 <body>
   <fieldset id="form-gra-time">
@@ -18,7 +58,7 @@
     </select>
   </fieldset>
 
-  <div class="aqi-chart-wrap">
+  <div id="aqi-chart-wrap" class="aqi-chart-wrap" style="position:relative;border: 1px solid black;">
   </div>
   <script src="index.js"></script>
 </body>
