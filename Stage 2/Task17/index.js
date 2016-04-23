@@ -109,15 +109,21 @@ function initCitySelector() {
  * 初始化图表需要的数据格式
  */
 function initAqiChartData() {
-  var week = 0, weekCount = 0, singleWeek = {},
-        month = 0, monthCount = 0, singleMonth = {};
+  var week = 0, weekValueCount = 0, singleWeek = {},
+        month = 0, monthValueCount = 0, singleMonth = {};
 
   for (var key in aqiSourceData) {
     var tempValue = aqiSourceData[key]; //城市污染数据
     var dayArr = Object.getOwnPropertyNames(tempValue); //日期
     var tempMonth = dayArr[0].slice(5, 7); //当前日期的月份
+    var weekInit = 4, weekDaysCount = 0; //2016 - 01 - 01是星期五,因此weekInit初始化为4; weekDaysCount记录一周的天数
 
-    
+    for (var i = 0; i < darArr.length; ++i) {
+      weekValueCount += tempValue[dayArr[i]];
+      monthValueCount += tempValue[dayArr[i]];
+      ++weekDaysCount;
+      
+    }
   }
 }
 
