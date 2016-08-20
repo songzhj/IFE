@@ -1,0 +1,255 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins/size.scss";
+@import "../../styles/mixins/button.scss";
+@import "../../styles/mixins/flex-center.scss";
+@import "../../styles/mixins/iconfont.scss";
+@import "../../styles/mixins/dialog.scss";
+
+
+.questionnaire-title,
+.edit-questionnaire-title {
+  @include flex-center;
+  @include size(90%, 3em);
+  margin: 0 auto 1em;
+  font-weight: 700;
+  font-size: 100%;
+  color: $gray-dark;
+  &:hover {
+    background: $pink linear-gradient(rgba(255, 255, 255, .2), transparent);
+  }
+}
+.edit-questionnaire-title {
+  @include size(calc(90% - 4px), calc(3em - 4px));
+  text-align: center;
+}
+.line {
+  width: 93.5%;
+  border-top: 2px solid $gray-light;
+  margin: 0 auto;
+}
+.question-wrap {
+  width: 90%;
+  margin: 1.875em auto;
+  font-size: 80%;
+  .question {
+    padding: 1em 1.5em;
+    line-height: 1.5;
+    &:hover {
+      background: $pink;
+      .caption {
+        font-weight: 700;
+      }
+      .text {
+        background: inherit;
+      }
+      .operation-wrap {
+        visibility: visible;
+      }
+    }
+    .question-content,
+    .edit-question-content {
+      @include size(calc(100% - 4.8em), calc(1.5em - 4px));
+      display: inline-block;
+      margin-left: 1em;
+    }
+    .edit-question-content {
+      margin-left: calc(1em - 2px);
+      background: inherit;
+    }
+    .option-wrap {
+      padding-left: 2.4em;
+      .edit-option {
+        @include size(calc(100% - 5.6em), calc(1.5em - 4px));
+        margin-left: -2px;
+        background: inherit;
+      }
+      .radio-option-icon::before {
+        @include iconfont($radio-option, .8em, 1em);
+      }
+      .checkbox-option-icon::before {
+        @include iconfont($checkbox-option, .8em, 1em);
+      }
+      .remove-option-btn {
+        display: none;
+        &::before {
+          @include iconfont($remove, .8em, 0, 1em);
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      &:hover {
+        .remove-option-btn {
+          display: inline;
+          color: $red;
+        }
+      }
+    }
+    .add-option-btn {
+      @include flex-center;
+      @include size(calc(100% - 4.8em - 2px), calc(1.5em - 4px));
+      margin: .25em auto;
+      &::before {
+        @include iconfont($add, .8em);
+        visibility: hidden;
+      }
+      &:hover {
+        margin: calc(.25em - 1px) 2.4em;
+        border: 1px dashed $gray;
+        cursor: pointer;
+        &::before {
+          visibility: visible;
+        }
+      }
+    }
+    .text {
+      @include size(calc(100% - 4.8em), 5em);
+      margin-top: .25em;
+      margin-left: 2.4em;
+    }
+    .operation-wrap {
+      visibility: hidden;
+      width: 100%;
+      text-align: right;
+      .operation {
+        display: inline-block;
+        margin-left: 1em;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .required,
+    .not-required {
+      width: 7.6em;
+      margin-left: 2.4em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .required {
+      &::before {
+        @include iconfont($checkbox, .8em, 1em);
+      }
+    }
+    .not-required {
+      &::before {
+        @include iconfont($checkbox-option, .8em, 1em);
+      }
+    }
+  }
+}
+.add-question {
+  width: 90%;
+  margin: 1.5em auto;
+  .type-wrap {
+    @include flex-center;
+    height: 5em;
+    border: 1px solid $gray-light;
+    border-bottom: none;
+    margin: 0 auto;
+    font-size: 80%;
+    transform-origin: top;
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .type {
+      @include flex-center;
+      @include size(6.25em, 2em);
+      z-index: 1;
+      margin: 0 1em;
+      border: 1px solid $gray-light;
+      border-radius: .2em;
+      box-shadow: 0 .05em .25em rgba(0, 0, 0, .5);
+      color: $gray;
+      background: $gray-lighter;
+      &:hover {
+        border-color: $orange;
+        color: $white;
+        background: $orange;
+        cursor: pointer;
+      }
+      @media screen and (max-width: $small-page-max-width) {
+        margin: 0 .2em;
+      }
+    }
+    .radio::before {
+      @include iconfont($radio, .8em, .8em);
+    }
+    .checkbox::before {
+      @include iconfont($checkbox, .8em, .8em);
+    }
+    .text::before {
+      @include iconfont($text, .8em, .8em);
+    }
+  }
+  .enter {
+    height: 0;
+    transform: scale3d(1, 0, 1);
+    opacity: 0;
+    transition: height $edit-transition-timeout, transform $edit-transition-timeout, opacity $edit-transition-timeout;
+  }
+  .enter.enterActive {
+    height: 5em;
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+  .leave {
+    height: 5em;
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+    transition: height $edit-transition-timeout, transform $edit-transition-timeout, opacity $edit-transition-timeout;
+  }
+  .leave.leaveActive {
+    height: 0;
+    transform: scale3d(1, 0, 1);
+    opacity: 0;
+  }
+  .add-question-btn {
+    @include flex-center;
+    height: 5em;
+    border: 1px solid $gray-light;
+    font-size: 80%;
+    color: $gray;
+    background: $gray-lighter;
+    cursor: pointer;
+    &::before {
+      @include iconfont($add, 1.25em, 1em);
+    }
+  }
+}
+.footer {
+  margin-top: 2em;
+  font-size: 80%;
+  text-align: center;
+  color: $gray;
+  .date-wrap {
+    position: relative;
+    display: inline-block;
+    margin-right: 15%;
+    line-height: 1.5;
+  }
+  @media screen and (max-width: $medium-page-max-width) {
+    .date-wrap {
+      display: block;
+      margin: 0 auto 1em;
+    }
+  }
+  .link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .btn {
+    @include button;
+    display: inline-block;
+    margin: 0 .6em;
+  }
+
+  @include dialog;
+}
