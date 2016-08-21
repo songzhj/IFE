@@ -1,0 +1,39 @@
+$font-size-base:          20px !default;
+
+$small-page-max-width:    480px !default;
+$medium-page-max-width:   960px !default;
+
+$gray-base:               #000 !default;
+$gray-darker:             lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:               lighten($gray-base, 33.5%) !default; // #555
+$gray:                    lighten($gray-base, 53.3%) !default; // #888
+$gray-light:              lighten($gray-base, 80%)   !default; // #ccc
+$gray-lighter:            lighten($gray-base, 93.3%) !default; // #eee
+$white:                   #fff    !default;
+$orange:                  #ee7418 !default;
+$red:                     #d95351 !default;
+$pink:                    #fef1e8 !default;
+$green:                   #5cb85b !default;
+
+$add:                     "+" !default;
+$radio:                   "√" !default;
+$checkbox:                "■" !default;
+$text:                    "＃" !default;
+$radio-option:            "□" !default;
+$checkbox-option:         "□" !default;
+$remove:                  "╳" !default;
+
+$calendar-width-base:     280px !default;
+$calendar-wrap-width:     $calendar-width-base + 10px    !default; // 290px
+$calendar-slide-offset:   $calendar-width-base - 2px * 7 !default; // 266px
+$calendar-slide-duration: .32s !default;
+$calendar-zoom-times:     10  !default;
+$calendar-zoom-duration:  .5s !default;
+
+$edit-transition-timeout: .32s !default;
+
+$dialog-zoom-duration:    .32s !default;
+
+$surface-z-index:         2 !default;
+$mask-z-index:            1 !default;
+$background-z-index:      -1 !default;
