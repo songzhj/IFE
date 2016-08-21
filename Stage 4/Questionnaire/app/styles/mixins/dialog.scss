@@ -1,0 +1,28 @@
+@import "../vars.scss";
+@import "./size.scss";
+
+@mixin dialog() {
+  .dialog {
+    position: relative;
+    width: calc(100% - 5em);
+    height: calc(100% - 7em);
+    margin: 2em auto 2.5em;
+    line-height: 1.5;
+    .btn-wrap {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 100%;
+      transform: translateX(-50%);
+      .link {
+        text-decoration: none;
+        color: inherit;
+      }
+      .btn {
+        @include button;
+        display: inline-block;
+        margin: 0 .6em;
+      }
+    }
+  }
+}
