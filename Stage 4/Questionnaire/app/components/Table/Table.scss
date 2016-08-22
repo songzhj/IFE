@@ -1,0 +1,18 @@
+@import "../../styles/vars.scss";
+
+.table-th {
+  height: 3em;
+  &:hover {
+    background: $pink;
+  }
+}
+.table-tbody-tr {
+  &:hover {
+    background: $pink;
+  }
+  .table-td {
+    height: 3em;
+    border-bottom: 1px solid $gray-light;
+    font-size: 75%;
+  }
+}
